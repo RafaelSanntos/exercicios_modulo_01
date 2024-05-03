@@ -1,15 +1,13 @@
-Tecnologias utilizadas:
+# README
 
-JavaScript
-Node.js v20.12.2
-biblioteca prompt-sync
+## Tecnologias utilizadas:
 
-Instalações básicas:
+- JavaScript
+- Node.js v20.12.2
+- Biblioteca prompt-sync
 
-1. Para instalar o Node.js acesse: https://nodejs.org/en/download
+## Instalações básicas:
 
-2. Para instalar a biblioteca prompt-sync, abra e execute no terminal o comando: npm install prompt-sync
+1. Para instalar o Node.js, acesse: [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-Para rodar o prograga:
-
-Estando no diretório raiz "exerciciosModulo01" de o comando: node main.js
+2. Para instalar a biblioteca prompt-sync, abra e execute no terminal o comando: 
