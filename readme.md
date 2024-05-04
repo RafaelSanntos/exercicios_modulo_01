@@ -8,7 +8,7 @@
 
 ## Instalações básicas:
 
-1. Para instalar o Node.js acesse: [Clique aqui!](https://nodejs.org/en/download){:target="_blank"}
+1. Para instalar o Node.js acesse: [Clique aqui!](https://nodejs.org/en/download)
 
 2. Para instalar a biblioteca prompt-sync, abra o terminal no diretório raiz "C:\seu_diretorio\exerciciosModulo01" e execute no terminal o comando:
 
@@ -27,11 +27,11 @@ node exercicio_01.js
 
 ### Exercício_01.js
 
-- Fórmula Graus Celsius para Fahrenheit: [Clique aqui!](https://tecnoblog.net/responde/como-converter-graus-celsius-para-fahrenheit/){:target="_blank"}
+- Fórmula Graus Celsius para Fahrenheit: [Clique aqui!](https://tecnoblog.net/responde/como-converter-graus-celsius-para-fahrenheit/)
 
 ### Exercício_02.js
 
-- Objetos em JavaScript - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects){:target="_blank"}
-- Inicializadores de objetos - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects){:target="_blank"}
-- Função isNaN - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isNaN){:target="_blank"}
-- Função toFixed - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed){:target="_blank"}
+- Objetos em JavaScript - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects)
+- Inicializadores de objetos - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects)
+- Função isNaN - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isNaN)
+- Função toFixed - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
