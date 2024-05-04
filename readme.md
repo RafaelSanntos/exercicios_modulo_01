@@ -31,7 +31,7 @@ node exercicio_01.js
 
 ### Exercício_02.js
 
-- Objetos em JavaScript - docuntação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects)
-- Inicializadores de objetos - docuntação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects)
+- Objetos em JavaScript - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects)
+- Inicializadores de objetos - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects)
 - Função isNaN - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/isNaN)
 - Função toFixed - documentação MDN: [Clique aqui!](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
