@@ -1,4 +1,4 @@
-var prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
 
 console.log("\n");
 console.log("********************************************************************** Exercício 1 **********************************************************************\n");
@@ -17,12 +17,12 @@ while(true){
 
 // Função para converter Celsius em Fahrenheit
 function celsiusParaFahrenheit(celsius) {
-    var fahrenheit = celsius * 9/5 + 32;
+    let fahrenheit = celsius * 9/5 + 32;
     return fahrenheit;
 }
 
 // Chamando a função celsiusParaFahrenheit() e armazenando o valor na variável fahrenheit
-var fahrenheit = celsiusParaFahrenheit(celsius);
+let fahrenheit = celsiusParaFahrenheit(celsius);
 
 // Exibir o resultado
 console.log("\n*********************************************************************************************************************************************************\n");

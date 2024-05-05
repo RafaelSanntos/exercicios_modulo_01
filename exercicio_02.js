@@ -1,4 +1,4 @@
-var prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
 
 console.log("\n");
 console.log("********************************************************************** Exercício 2 **********************************************************************\n");
@@ -9,7 +9,7 @@ var dados = {};
 // Função para solicitar os dados ao usuário
     //isNaN() - verifica se o input NÃO é um número e retorna (true) e se for número retorna (false)
 function solicitarDados() {
-    var numeroEleitoresInput;
+    let numeroEleitoresInput;
     while (true) {
         numeroEleitoresInput = prompt("Digite o número total de eleitores (use somente os números): ");
         if (!isNaN(numeroEleitoresInput)) {
@@ -20,7 +20,7 @@ function solicitarDados() {
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
     
-    var votosBrancosInput;
+    let votosBrancosInput;
     while (true) {
         votosBrancosInput = prompt("Digite o número total de votos brancos (use somente os números): ");
         if (!isNaN(votosBrancosInput)) {
@@ -31,7 +31,7 @@ function solicitarDados() {
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
     
-    var votosNulosInput;
+    let votosNulosInput;
     while (true) {
         votosNulosInput = prompt("Digite o número total de votos nulos (use somente os números): ");
         if (!isNaN(votosNulosInput)) {
@@ -42,7 +42,7 @@ function solicitarDados() {
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
     
-    var votosValidosInput;
+    let votosValidosInput;
     while (true) {
         votosValidosInput = prompt("Digite o número total de votos válidos (use somente os números): ");
         if (!isNaN(votosValidosInput)) {
@@ -54,10 +54,10 @@ function solicitarDados() {
     }
 
     // Convertendo os valores para números após todas as entradas serem válidas
-    var numeroEleitores = parseInt(numeroEleitoresInput);
-    var votosBrancos = parseInt(votosBrancosInput);
-    var votosNulos = parseInt(votosNulosInput);
-    var votosValidos = parseInt(votosValidosInput);
+    let numeroEleitores = parseInt(numeroEleitoresInput);
+    let votosBrancos = parseInt(votosBrancosInput);
+    let votosNulos = parseInt(votosNulosInput);
+    let votosValidos = parseInt(votosValidosInput);
 
     // Atualizando os dados e inserindo eles em uma variavel externa para usa-lás fora da função
     dados.numeroEleitores = numeroEleitores;
@@ -90,9 +90,9 @@ console.clear();
 
 function calcularPercentualVotos(votosBrancos, votosNulos, votosValidos){
 
-    var percentualVotosBrancos = (votosBrancos / dados.numeroEleitores) * 100;
-    var percentualVotosNulos = (votosNulos / dados.numeroEleitores) * 100;
-    var percentualVotosValidos = (votosValidos / dados.numeroEleitores) * 100;
+    let percentualVotosBrancos = (votosBrancos / dados.numeroEleitores) * 100;
+    let percentualVotosNulos = (votosNulos / dados.numeroEleitores) * 100;
+    let percentualVotosValidos = (votosValidos / dados.numeroEleitores) * 100;
 
     return {
         percentualVotosBrancos: percentualVotosBrancos,
@@ -104,7 +104,7 @@ function calcularPercentualVotos(votosBrancos, votosNulos, votosValidos){
 //Exibir o calculo do percentual dos votos
 //toFixed(2) - arredonda o número em 2 casas decimais
 
-var percentuais = calcularPercentualVotos(dados.votosBrancos, dados.votosNulos, dados.votosValidos);
+let percentuais = calcularPercentualVotos(dados.votosBrancos, dados.votosNulos, dados.votosValidos);
 
 console.log("*************************************************************************************************\n");
 
