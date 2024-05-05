@@ -7,6 +7,7 @@ console.log("*******************************************************************
 var dados = {};
 
 // Função para solicitar os dados ao usuário
+    //isNaN() - verifica se o input NÃO é um número e retorna (true) e se for número retorna (false)
 function solicitarDados() {
     var numeroEleitoresInput;
     while (true) {
@@ -15,6 +16,7 @@ function solicitarDados() {
             console.clear();
             break; // Sai do loop se o valor for um número
         }
+        console.clear();
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
     
@@ -25,6 +27,7 @@ function solicitarDados() {
             console.clear();
             break;
         }
+        console.clear();
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
     
@@ -35,6 +38,7 @@ function solicitarDados() {
             console.clear();
             break;
         }
+        console.clear();
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
     
@@ -45,6 +49,7 @@ function solicitarDados() {
             console.clear();
             break;
         }
+        console.clear();
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
 
