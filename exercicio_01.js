@@ -1,13 +1,13 @@
-const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
+const prompt = require('prompt-sync')();
 
-console.log("\n");
-console.log("********************************************************************** Exercício 1 **********************************************************************\n");
+console.log("\n********************************************************************** Exercício 1 **********************************************************************\n");
+
+let inputCelsius;
 
 // Solicitar ao usuário que insira a temperatura em graus Celsius
-    //isNaN() - verifica se o input NÃO é um número e retorna (true) e se for número retorna (false)
 while(true){
-    var celsius = parseFloat(prompt("Digite o valor da temperatura em graus Celsius que deseja transformar em graus Fahrenheit (use somente os números): "));
-    if (!isNaN(celsius)) {
+    inputCelsius = parseFloat(prompt("Digite o valor da temperatura em graus Celsius que deseja transformar em graus Fahrenheit (use somente os números): "));
+    if (!isNaN(inputCelsius)) {
         console.clear();
         break;
     }
@@ -22,11 +22,11 @@ function celsiusParaFahrenheit(celsius) {
 }
 
 // Chamando a função celsiusParaFahrenheit() e armazenando o valor na variável fahrenheit
-let fahrenheit = celsiusParaFahrenheit(celsius);
+let fahrenheit = celsiusParaFahrenheit(inputCelsius);
 
 // Exibir o resultado
 console.log("\n*********************************************************************************************************************************************************\n");
 
-console.log("Resultado: " + celsius + "°C equivalem a " + fahrenheit + "°F");
+console.log("Resultado: " + inputCelsius + "°C equivalem a " + fahrenheit + "°F");
 
 console.log("\n*********************************************************************************************************************************************************");
