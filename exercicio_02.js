@@ -52,7 +52,7 @@ function solicitardadosDaEleicao() {
         console.log("Por favor, insira apenas números. Tente novamente.\n");
     }
 
-    // Armazenando os valores diretamente após a entrada do usuário
+    // Armazenando os em um objeto dados que permite usar as variáveis fora da função e agrupa elas.
     dadosDaEleicao.numeroEleitores = numeroEleitoresInput;
     dadosDaEleicao.votosBrancos = votosBrancosInput;
     dadosDaEleicao.votosNulos = votosNulosInput;
