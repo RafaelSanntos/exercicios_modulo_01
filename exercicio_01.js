@@ -1,4 +1,4 @@
-const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
 
 console.log("\n********************************************************************** Exercício 1 **********************************************************************\n");
 

@@ -1,14 +1,14 @@
-const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
 
 console.log("\n********************************************************************** Exercício 3 **********************************************************************\n");
 
 // Função para solicitar um número inteiro
 function solicitarInteiro(mensagem) {
     while (true) {
-        const input = prompt(mensagem);
+        const input = parseInt(prompt(mensagem));
         if (!isNaN(input) && Number.isInteger(parseFloat(input))) {
             console.clear();
-            return parseInt(input);
+            return input;
         }
         console.clear();
         console.log("Por favor, insira apenas números inteiros. Tente novamente.\n");

@@ -1,12 +1,14 @@
-const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
 
 // Função para obter notas
 function obterNotas(mensagem){
     while (true) {
         const input = parseFloat(prompt(mensagem));
         if (!isNaN(input) && input >= 0 && input <= 10) {
+            console.clear();
             return input;
         }
+        console.clear();
         console.log("Por favor, digite um número positivo de 0 até 10. Tente novamente!");
     }
 }
