@@ -9,7 +9,7 @@ function obterLadosTriangulo(mensagem) {
             return input;
         }
         console.clear();
-        console.log("Por favor, digite um número positivo de 0 até 10. Tente novamente!");
+        console.log("Por favor, digite um número positivo. Tente novamente!");
     }
 }
 
