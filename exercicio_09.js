@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')();
 
-// Criando fução obterCodigo()
+// Criando função obterCodigo()
 function obterCodigo(mensagem) {
     while(true) {
         const input = parseInt(prompt(mensagem));
@@ -13,7 +13,7 @@ function obterCodigo(mensagem) {
     }
 }
 
-// Criando fução identificarRegiao()
+// Criando função identificarRegiao()
 function identificarRegiao(codigo) {
     switch(codigo) {
         case 1:
