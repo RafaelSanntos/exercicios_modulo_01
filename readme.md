@@ -40,3 +40,5 @@ node exercicio_01.js
 
 - Refatorar o código do arquivo_03.js ao arquivo_16.js
 - Adicionar as demais fontes utilizadas para desenvolver os códigos
+- Adicionar opção para o usuário sair da aplicação
+- Adicionar mais Casos de Uso Alternativos
