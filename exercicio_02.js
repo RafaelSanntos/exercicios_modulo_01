@@ -1,110 +1,70 @@
-const prompt = require('prompt-sync')(); //biblioteca prompt-sync lê a entrada do usuário no Node.js
+const prompt = require('prompt-sync')();
 
-console.log("\n********************************************************************** Exercício 2 **********************************************************************\n");
+// Objeto para guardar as variáveis numeroEleitores, votosBrancos, votosNulos e votosValidos
+const dadosDaEleicao = {};
 
-// objeto para guardar as variáveis numeroEleitores, votosBrancos, votosNulos e votosValidos
-var dadosDaEleicao = {};
-
-// Função para solicitar os dados ao usuário
-    //isNaN() - verifica se o input NÃO é um número e retorna (true) e se for número retorna (false)
-function solicitardadosDaEleicao() {
-    let numeroEleitoresInput;
+// Função auxiliar para solicitar e validar entrada de dados
+function solicitarNumero(promptMessage) {
+    let input;
     while (true) {
-        numeroEleitoresInput = parseInt(prompt("Digite o número total de eleitores (use somente os números): "));
-        if (!isNaN(numeroEleitoresInput)) {
+        input = parseInt(prompt(promptMessage));
+        if (!isNaN(input) && input >= 0) {
             console.clear();
-            break; // Sai do loop se o valor for um número
+            return input;
         }
         console.clear();
-        console.log("Por favor, insira apenas números. Tente novamente.\n");
+        console.log("Por favor, insira apenas números inteiros não negativos. Tente novamente.\n");
     }
-    
-    let votosBrancosInput;
-    while (true) {
-        votosBrancosInput = parseInt(prompt("Digite o número total de votos brancos (use somente os números): "));
-        if (!isNaN(votosBrancosInput)) {
-            console.clear();
-            break;
-        }
-        console.clear();
-        console.log("Por favor, insira apenas números. Tente novamente.\n");
-    }
-    
-    let votosNulosInput;
-    while (true) {
-        votosNulosInput = parseInt(prompt("Digite o número total de votos nulos (use somente os números): "));
-        if (!isNaN(votosNulosInput)) {
-            console.clear();
-            break;
-        }
-        console.clear();
-        console.log("Por favor, insira apenas números. Tente novamente.\n");
-    }
-    
-    let votosValidosInput;
-    while (true) {
-        votosValidosInput = parseInt(prompt("Digite o número total de votos válidos (use somente os números): "));
-        if (!isNaN(votosValidosInput)) {
-            console.clear();
-            break;
-        }
-        console.clear();
-        console.log("Por favor, insira apenas números. Tente novamente.\n");
-    }
-
-    // Armazenando os em um objeto dados que permite usar as variáveis fora da função e agrupa elas.
-    dadosDaEleicao.numeroEleitores = numeroEleitoresInput;
-    dadosDaEleicao.votosBrancos = votosBrancosInput;
-    dadosDaEleicao.votosNulos = votosNulosInput;
-    dadosDaEleicao.votosValidos = votosValidosInput;
-}    
-
-// instanciar ao usuário que insira os dadosDaEleicao
-solicitardadosDaEleicao();
-
-
-// Exceção: garantir que o usuário não digite uma quantidade de votos maior ou menor que o número de eleitores - BÔNUS
-while (isNaN(dadosDaEleicao.numeroEleitores) || isNaN(dadosDaEleicao.votosBrancos) || isNaN(dadosDaEleicao.votosNulos) || isNaN(dadosDaEleicao.votosValidos) || dadosDaEleicao.votosBrancos + dadosDaEleicao.votosNulos + dadosDaEleicao.votosValidos !== dadosDaEleicao.numeroEleitores) {
-    console.clear();
-    if (isNaN(dadosDaEleicao.numeroEleitores) || isNaN(dadosDaEleicao.votosBrancos) || isNaN(dadosDaEleicao.votosNulos) || isNaN(dadosDaEleicao.votosValidos)) {
-        console.log("Por favor, insira apenas números. Tente novamente.\n");
-    } else if (dadosDaEleicao.votosBrancos + dadosDaEleicao.votosNulos + dadosDaEleicao.votosValidos > dadosDaEleicao.numeroEleitores) {
-        console.log("O número total de votos é MAIOR do que o número de eleitores. Por favor, corrija os dados da eleicao da eleição!\n");
-    } else {
-        console.log("O número total de votos é MENOR do que o número de eleitores. Por favor, corrija os dados da eleicao da eleição!\n");
-    }
-    solicitardadosDaEleicao();
 }
 
-console.clear();
+function solicitarDadosDaEleicao() {
+    dadosDaEleicao.numeroEleitores = solicitarNumero("Digite o número total de eleitores (use somente os números): ");
+    dadosDaEleicao.votosBrancos = solicitarNumero("Digite o número total de votos brancos (use somente os números): ");
+    dadosDaEleicao.votosNulos = solicitarNumero("Digite o número total de votos nulos (use somente os números): ");
+    dadosDaEleicao.votosValidos = solicitarNumero("Digite o número total de votos válidos (use somente os números): ");
+}
 
+function validarVotosEmRelacaoAoTotalDeEleitores() {
+    while (true) {
+        const totalVotos = dadosDaEleicao.votosBrancos + dadosDaEleicao.votosNulos + dadosDaEleicao.votosValidos;
+        if (totalVotos === dadosDaEleicao.numeroEleitores) {
+            return;
+        }
+        console.clear();
+        if (totalVotos > dadosDaEleicao.numeroEleitores) {
+            console.log("O número total de votos é MAIOR do que o número de eleitores. Por favor, corrija os dados da eleição!\n");
+        } else {
+            console.log("O número total de votos é MENOR do que o número de eleitores. Por favor, corrija os dados da eleição!\n");
+        }
+        solicitarDadosDaEleicao();
+    }
+}
 
-//Calcular o percentual que cada tipo de voto representa em relação a todos os votos
-
-function calcularPercentualVotos(votosBrancos, votosNulos, votosValidos){
-
-    let percentualVotosBrancos = (votosBrancos / dadosDaEleicao.numeroEleitores) * 100;
-    let percentualVotosNulos = (votosNulos / dadosDaEleicao.numeroEleitores) * 100;
-    let percentualVotosValidos = (votosValidos / dadosDaEleicao.numeroEleitores) * 100;
+function calcularPercentualVotos({ votosBrancos, votosNulos, votosValidos, numeroEleitores }) {
+    const percentualVotosBrancos = (votosBrancos / numeroEleitores) * 100;
+    const percentualVotosNulos = (votosNulos / numeroEleitores) * 100;
+    const percentualVotosValidos = (votosValidos / numeroEleitores) * 100;
 
     return {
-        percentualVotosBrancos: percentualVotosBrancos,
-        percentualVotosNulos: percentualVotosNulos,
-        percentualVotosValidos: percentualVotosValidos
+        percentualVotosBrancos,
+        percentualVotosNulos,
+        percentualVotosValidos,
     };
 }
 
-//Exibir o calculo do percentual dos votos
-//toFixed(2) - arredonda o número em 2 casas decimais
+function exibirDadosDaEleicao(percentuais) {
+    const percentualVotosBrancos = percentuais.percentualVotosBrancos.toFixed(2);
+    const percentualVotosNulos = percentuais.percentualVotosNulos.toFixed(2);
+    const percentualVotosValidos = percentuais.percentualVotosValidos.toFixed(2);
 
-let percentuais = calcularPercentualVotos(dadosDaEleicao.votosBrancos, dadosDaEleicao.votosNulos, dadosDaEleicao.votosValidos);
+    console.log(`Total de eleitores: ${dadosDaEleicao.numeroEleitores}\n`);
+    console.log(`Percentual de votos brancos: ${percentualVotosBrancos}%`);
+    console.log(`Percentual de votos nulos: ${percentualVotosNulos}%`);
+    console.log(`Percentual de votos válidos: ${percentualVotosValidos}%\n`);
+}
 
-console.log("*************************************************************************************************\n");
-
-console.log("Total de eleitores: " + dadosDaEleicao.numeroEleitores + "\n");
-
-console.log("Percentual de votos brancos: " + percentuais.percentualVotosBrancos.toFixed(2) + "%");
-console.log("Percentual de votos nulos: " + percentuais.percentualVotosNulos.toFixed(2) + "%");
-console.log("Percentual de votos válidos: " + percentuais.percentualVotosValidos.toFixed(2) + "%\n");
-
-console.log("*************************************************************************************************\n");
+// Chamando as funções
+solicitarDadosDaEleicao();
+validarVotosEmRelacaoAoTotalDeEleitores();
+const percentuais = calcularPercentualVotos(dadosDaEleicao);
+exibirDadosDaEleicao(percentuais);
